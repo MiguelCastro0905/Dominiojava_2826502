@@ -1,15 +1,25 @@
 package org.cgmlti.dominios.java.ejercicio4;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Prueba {
 
     public static void main(String[] args) {
 
+        //crear una instancia de vehiculo:
+        Vehiculo vehiculo1 = new Vehiculo(5426565L, true, 45);
+
+
         //crear un objeto viaje
         Viaje v = new Viaje();
-        v.fechaInicio = LocalDateTime.of(2024, 4, 26, 22, 30, 0);
-        v.fechaFin = LocalDateTime.of(2024, 4, 29, 16, 30, 0);
+
+        //Invocacion : LLamado , ejecicucion, utilizacion 
+        v.calcularDuracionViaje(LocalDate.of(2024, 4, 26), 
+                                LocalDate.of(2024, 4, 29 ));
+
+
+        //invocacion de la sobrecarga
+        System.out.println("Duracion en dias del viaje: " + v.calcularDuracionViaje());                     
         
         //instanciar  un ejemplar 
         
@@ -29,6 +39,13 @@ public class Prueba {
 
         CamionRemolque cr1 = new CamionRemolque();
         cr1.capacidadCargaExtra =  9;
+        cr1.capacidadCarga = 10;
+
+        //invocar el metodo creado
+        Integer totalCarga = cr1.calcularTotalCarga();
+        System.out.println("total carga: "+ totalCarga);
+
+
 
         System.out.println("El viaje del camion: " +
                             "tiene fecha de inicio:" + c1.elTalViajeQueHizoElCamion.fechaInicio);
